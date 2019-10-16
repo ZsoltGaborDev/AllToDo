@@ -13,7 +13,6 @@ class TodoListViewController: UITableViewController {
     var itemArray = [Item]()
     let dataFilePath = FileManager.default.urls(for: .documentDirectory,  in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +40,6 @@ class TodoListViewController: UITableViewController {
         let item = itemArray[indexPath.row]
         cell.textLabel?.text = item.title
         cell.accessoryType = item.done == true ? .checkmark : .none
-        
         return cell
     }
     
@@ -89,7 +87,6 @@ class TodoListViewController: UITableViewController {
             } catch {
                 print("Error decoding item array, \(error)")
             }
-            
         }
     }
 }
